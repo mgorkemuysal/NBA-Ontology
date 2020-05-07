@@ -1,0 +1,1485 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#"
+     xml:base="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#legendOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#legendOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#RetiredPlayer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+        <rdfs:comment>A Team plays at a Conference</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#ActivePlayer"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsFor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:comment>An Active Player plays for a Team</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#trains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#trains">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Coach"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#trains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:comment>A Coach trains a Team</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Arena -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Arena">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#AssistPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#AssistPercentage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#BlockPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#BlockPercentage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Born -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Born">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Championships -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Championships"/>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#CoachChampionships -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#CoachChampionships">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Championships"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Coach"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#trains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#CoachPlayoffAppearances -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#CoachPlayoffAppearances">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#PlayoffAppearances"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Coach"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#trains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Debut -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Debut">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#DraftedBy -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#DraftedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#FieldGoalPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#FieldGoalPercentage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#FirstAppearance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#FirstAppearance">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>Year of the First League Appearance</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#FreeThrowPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#FreeThrowPercentage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Height -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Height">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#JerseyNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#JerseyNumber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Location -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Location">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#PlayerChampionships -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#PlayerChampionships">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Championships"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#PlayerPlayoffAppearances -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#PlayerPlayoffAppearances">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#PlayoffAppearances"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#PlayoffAppearances -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#PlayoffAppearances"/>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#PlayoffWinLossPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#PlayoffWinLossPercentage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Coach"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#trains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#PointPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#PointPercentage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Position -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Position">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#RebaundPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#RebaundPercentage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#RegularSeasonWinLossPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#RegularSeasonWinLossPercentage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Coach"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#trains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Salary -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Salary">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#ActivePlayer"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsFor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#StealPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#StealPercentage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#TeamChampionships -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#TeamChampionships">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Championships"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#TeamPlayoffAppearances -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#TeamPlayoffAppearances">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#PlayoffAppearances"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#ThreePointsPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#ThreePointsPercentage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#TurnoverPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#TurnoverPercentage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Weight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Weight">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#ActivePlayer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#ActivePlayer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsFor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#RetiredPlayer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Coach -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Coach">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#trains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#EasternConference -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#EasternConference">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#WesternConference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:seeAlso>Basketball Player</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#RetiredPlayer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#RetiredPlayer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#WesternConference -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#WesternConference">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Atlantic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Atlantic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#EasternConference"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#BostonCeltics -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#BostonCeltics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+            </owl:Restriction>
+        </rdf:type>
+        <playsAt rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Atlantic"/>
+        <Arena rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TD Garden</Arena>
+        <Championships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">17</Championships>
+        <FirstAppearance rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1946</FirstAppearance>
+        <Location rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Boston, Massachusetts</Location>
+        <PlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">56</PlayoffAppearances>
+        <TeamChampionships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">17</TeamChampionships>
+        <TeamPlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">56</TeamPlayoffAppearances>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#BradStevens -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#BradStevens">
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Coach"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#trains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+            </owl:Restriction>
+        </rdf:type>
+        <trains rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#BostonCeltics"/>
+        <Born rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1976-10-22T00:00:00</Born>
+        <Championships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</Championships>
+        <CoachChampionships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</CoachChampionships>
+        <CoachPlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</CoachPlayoffAppearances>
+        <PlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</PlayoffAppearances>
+        <PlayoffWinLossPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.482</PlayoffWinLossPercentage>
+        <RegularSeasonWinLossPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.56</RegularSeasonWinLossPercentage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Central -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Central">
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#EasternConference"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#ChicagoBulls -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#ChicagoBulls">
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+            </owl:Restriction>
+        </rdf:type>
+        <playsAt rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Central"/>
+        <Arena rdf:datatype="http://www.w3.org/2001/XMLSchema#string">United Center</Arena>
+        <Championships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">6</Championships>
+        <FirstAppearance rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1966</FirstAppearance>
+        <Location rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chicago, Illinois</Location>
+        <PlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">35</PlayoffAppearances>
+        <TeamChampionships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">6</TeamChampionships>
+        <TeamPlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">35</TeamPlayoffAppearances>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#ErikSpoelstra -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#ErikSpoelstra">
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Coach"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#trains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+            </owl:Restriction>
+        </rdf:type>
+        <trains rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#MiamiHeat"/>
+        <Born rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1970-11-01T00:00:00</Born>
+        <Championships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</Championships>
+        <CoachChampionships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</CoachChampionships>
+        <CoachPlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">8</CoachPlayoffAppearances>
+        <PlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">8</PlayoffAppearances>
+        <PlayoffWinLossPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.602</PlayoffWinLossPercentage>
+        <RegularSeasonWinLossPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.596</RegularSeasonWinLossPercentage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#HoustonRockets -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#HoustonRockets">
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+            </owl:Restriction>
+        </rdf:type>
+        <playsAt rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Southwest"/>
+        <Arena rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Toyota Center</Arena>
+        <Championships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</Championships>
+        <FirstAppearance rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1967</FirstAppearance>
+        <Location rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Houston, Texas</Location>
+        <PlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">33</PlayoffAppearances>
+        <TeamChampionships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</TeamChampionships>
+        <TeamPlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">33</TeamPlayoffAppearances>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#JaylenBrown -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#JaylenBrown">
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#ActivePlayer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsFor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+            </owl:Restriction>
+        </rdf:type>
+        <playsFor rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#BostonCeltics"/>
+        <AssistPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.4</AssistPercentage>
+        <BlockPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.3</BlockPercentage>
+        <Born rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1996-10-24T00:00:00</Born>
+        <Championships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</Championships>
+        <Debut rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-10-26T00:00:00</Debut>
+        <DraftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Boston Celtics</DraftedBy>
+        <FieldGoalPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">47.2</FieldGoalPercentage>
+        <FreeThrowPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">67.4</FreeThrowPercentage>
+        <Height rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">198</Height>
+        <JerseyNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">7</JerseyNumber>
+        <PlayerChampionships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</PlayerChampionships>
+        <PlayerPlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</PlayerPlayoffAppearances>
+        <PlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</PlayoffAppearances>
+        <PointPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">12.3</PointPercentage>
+        <Position rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small Forward</Position>
+        <RebaundPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.3</RebaundPercentage>
+        <Salary rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">6534829</Salary>
+        <StealPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8</StealPercentage>
+        <ThreePointsPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">37.2</ThreePointsPercentage>
+        <TurnoverPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.4</TurnoverPercentage>
+        <Weight rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">101</Weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#LeBronJames -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#LeBronJames">
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#ActivePlayer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsFor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+            </owl:Restriction>
+        </rdf:type>
+        <playsFor rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#LosAngelesLakers"/>
+        <AssistPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">7.3</AssistPercentage>
+        <BlockPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8</BlockPercentage>
+        <Born rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1984-12-30T00:00:00</Born>
+        <Championships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</Championships>
+        <Debut rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2003-10-29T00:00:00</Debut>
+        <DraftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cleveland Cavaliers</DraftedBy>
+        <FieldGoalPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">50.4</FieldGoalPercentage>
+        <FreeThrowPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">73.5</FreeThrowPercentage>
+        <Height rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">206</Height>
+        <JerseyNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">23</JerseyNumber>
+        <PlayerChampionships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</PlayerChampionships>
+        <PlayerPlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">13</PlayerPlayoffAppearances>
+        <PlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">13</PlayoffAppearances>
+        <PointPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">27.1</PointPercentage>
+        <Position rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small Forward</Position>
+        <RebaundPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">7.4</RebaundPercentage>
+        <Salary rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">37436858</Salary>
+        <StealPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.6</StealPercentage>
+        <ThreePointsPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">34.3</ThreePointsPercentage>
+        <TurnoverPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.5</TurnoverPercentage>
+        <Weight rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">113</Weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#LosAngelesLakers -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#LosAngelesLakers">
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+            </owl:Restriction>
+        </rdf:type>
+        <playsAt rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Pasific"/>
+        <Arena rdf:datatype="http://www.w3.org/2001/XMLSchema#string">STAPLES Center</Arena>
+        <Championships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">16</Championships>
+        <FirstAppearance rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1948</FirstAppearance>
+        <Location rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los Angeles, California</Location>
+        <PlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">60</PlayoffAppearances>
+        <TeamChampionships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">16</TeamChampionships>
+        <TeamPlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">60</TeamPlayoffAppearances>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#MiamiHeat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#MiamiHeat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+            </owl:Restriction>
+        </rdf:type>
+        <playsAt rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Southeast"/>
+        <Arena rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AmericanAirlines Arena</Arena>
+        <Championships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</Championships>
+        <FirstAppearance rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1988</FirstAppearance>
+        <Location rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Miami, Florida</Location>
+        <PlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">20</PlayoffAppearances>
+        <TeamChampionships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</TeamChampionships>
+        <TeamPlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">20</TeamPlayoffAppearances>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#MichaelJordan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#MichaelJordan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#RetiredPlayer"/>
+        <legendOf rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#ChicagoBulls"/>
+        <AssistPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.3</AssistPercentage>
+        <BlockPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8</BlockPercentage>
+        <Born rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1963-02-17T00:00:00</Born>
+        <Championships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">6</Championships>
+        <Debut rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1984-10-26T00:00:00</Debut>
+        <DraftedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chicago Bulls</DraftedBy>
+        <FieldGoalPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.497</FieldGoalPercentage>
+        <FreeThrowPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.835</FreeThrowPercentage>
+        <Height rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">198</Height>
+        <JerseyNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">23</JerseyNumber>
+        <PlayerChampionships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">6</PlayerChampionships>
+        <PlayerPlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">13</PlayerPlayoffAppearances>
+        <PlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">13</PlayoffAppearances>
+        <PointPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">30.1</PointPercentage>
+        <Position rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small Forward</Position>
+        <RebaundPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">6.2</RebaundPercentage>
+        <StealPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.3</StealPercentage>
+        <ThreePointsPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.327</ThreePointsPercentage>
+        <TurnoverPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.7</TurnoverPercentage>
+        <Weight rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">88</Weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Northwest -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Northwest">
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#WesternConference"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Pasific -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Pasific">
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#WesternConference"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Southeast -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Southeast">
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#EasternConference"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Southwest -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Southwest">
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#WesternConference"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#UtahJazz -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#UtahJazz">
+        <rdf:type rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+            </owl:Restriction>
+        </rdf:type>
+        <playsAt rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Northwest"/>
+        <Arena rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vivint Smart Home Arena</Arena>
+        <Championships rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</Championships>
+        <FirstAppearance rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1974</FirstAppearance>
+        <Location rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Salt Lake City, Utah</Location>
+        <PlayoffAppearances rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">28</PlayoffAppearances>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Atlantic"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#BostonCeltics"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#BradStevens"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Central"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#ChicagoBulls"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#ErikSpoelstra"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#HoustonRockets"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#JaylenBrown"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#LeBronJames"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#LosAngelesLakers"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#MiamiHeat"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#MichaelJordan"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Northwest"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Pasific"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Southeast"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Southwest"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#UtahJazz"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#legendOf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsFor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#trains"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#z">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S8</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#WesternConference"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S4</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#ActivePlayer"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S6</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Coach"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsFor"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#trains"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#y"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#z"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S9</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#EasternConference"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#legendOf"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#y"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#RetiredPlayer"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsFor"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#y"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#ActivePlayer"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#trains"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#y"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Coach"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#legendOf"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#RetiredPlayer"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S5</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#RetiredPlayer"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Player"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S7</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Team"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#playsAt"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#x"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#Conference"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/toshıba/ontologies/2020/0/nba_ontology#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
